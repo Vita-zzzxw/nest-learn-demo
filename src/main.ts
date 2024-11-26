@@ -11,9 +11,9 @@ async function bootstrap() {
 
   // 全局中间件
   app.use(function (req: Request, res: Response, next: NextFunction) {
-    console.log(req.url, 'before');
+    // console.log(req.url, 'before');
     next();
-    console.log('after');
+    // console.log('after');
     // res.header('Access-Control-Allow-Origin', '*');
     // res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
   });

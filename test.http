@@ -1,3 +1,14 @@
 
 
-GET http://localhost:3000/aa
+# GET http://localhost:3000
+
+
+
+
+POST http://localhost:3000/person/pipe 
+
+{
+    "name": "zhu",
+    "age": 123,
+    "sex": true,
+}

@@ -4,9 +4,18 @@ import { AppService } from './app.service';
 import { PersonModule } from './person/person.module';
 // import { APP_GUARD } from '@nestjs/core';
 // import { LoginGuard } from './login.guard';
+import { TestService } from './test/test.service';
+
+import { DynamicModuleModule } from './dynamic-module/dynamic-module.module';
 
 @Module({
-  imports: [PersonModule],
+  imports: [
+    PersonModule,
+    DynamicModuleModule.register({
+      name: 'zzz',
+      age: 26,
+    }),
+  ],
   controllers: [AppController],
   providers: [
     AppService,
@@ -31,6 +40,7 @@ import { PersonModule } from './person/person.module';
         };
       },
     },
+    TestService,
   ],
 })
 export class AppModule {}
